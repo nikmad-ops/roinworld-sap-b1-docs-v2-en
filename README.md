@@ -1,11 +1,12 @@
 # SAP Business One
 
+> **🌐 English / Русский**  
+> **Русская документация:** используйте переключатель языка в **правом верхнем углу** и выберите **Русский**.  
+> **English documentation:** the current version is open in English.
+
 ## RoinWorld User Documentation
 
 User guides for SAP Business One covering core operations, master data, finance, sales, purchasing, production, and warehousing.
-
-> **Language:** English  
-> To switch to **Русский**, use the language selector in the top-right corner.
 
 ## Start Here
 
