@@ -1,68 +1,68 @@
-Выверка - процесс сопоставления и закрытия открытых транзакция по Дебету и Кредиту. В SAP Business One различают два вида выверок
+Reconciliation is the process of matching and closing open Debit and Credit transactions. SAP Business One distinguishes two types of internal reconciliation:
 
-* Внутренняя финансовая выверка
-* Внутреняя выверка по бизнес партнёрам
+* Internal G/L Reconciliation
+* Internal Business Partner Reconciliation
 
-По способу создания различают следующие виды:
+By creation method, reconciliation can be:
 
-* Автоматическая выверка - например, платёж закрывающий инвойс будет автоматически выверен Системой
-* Ручная выверка - выверка созданная пользователем
+* Automatic Reconciliation - for example, a payment that closes an invoice is reconciled automatically by the System.
+* Manual Reconciliation - reconciliation created by a user.
 
-## Финансовая выверка
-Этот вид выверки позволяет сопоставить и закрыть открытые Дебет и Кредит по выбранному счёту Главной книги.
+## G/L Reconciliation
+This type of reconciliation is used to match and close open Debit and Credit transactions for a selected General Ledger account.
 
-Выверка между счетами Главной книги. Расположена в модуле Главного меню -> Финансы -> Внутренние выверки -> Выверка
+G/L reconciliation is located under Main Menu → Financials → Internal Reconciliations → Reconciliation.
 
  <img src="../.assets/97a953ed-7fa1-41e2-ab14-cf0e2414d92b.png" alt="" width="100%" />
 
-## Выверка по бизнес-партнёру
-Выверка в рамках одного или нескольких бизнес-партнёров. Этот вид выверки позволяет закрыть открытые балансы между бизнес партнёром Клиентом и бизнес партнёром Поставщиком. Например, при трёхсторонних сделках.  
-Расположена в Главном меню -> Бизнес-Партнёры->Внутренние выверки -> Выверка
+## Business Partner Reconciliation
+Reconciliation within one or several Business Partners. This type can be used to close open balances between a Business Partner maintained as a Customer and the same or another Business Partner maintained as a Vendor, for example in three-party transactions.  
+It is located under Main Menu → Business Partners → Internal Reconciliations → Reconciliation.
 
  <img src="../.assets/5c1e9951-6ab5-4aa2-bbc2-d78be382539d.png" alt="" width="100%" />
 
-## Пример выверки
+## Reconciliation Example
 
-В качестве примера, ниже приведена выверка между двумя бизнес партнёрами. По аналогии выполяются и другие виды выверок
+The example below shows reconciliation between two Business Partners. Other reconciliation types are performed in a similar way.
 
-1. Открыть Внутренюю выверку для БП
+1. Open Internal Reconciliation for Business Partners.
 
-2. Заполнить окно Критерии выбора
+2. Complete the Selection Criteria window.
 
-   Указать тип выверки - вручную  
-Установить флаг - Несколько бизнес-партнёров  
-Выбрать выеряемых бизнес партнёров в таблице  
-Нажать кнопку [Выверка]  
+   Set Reconciliation Type to Manual.  
+Select the Multiple Business Partners option.  
+Select the Business Partners to be reconciled in the table.  
+Click [Reconcile].  
 <img src="../.assets/c138c6aa-6ddd-43e5-a3ba-1d6f020ac994.png" alt="" width="100%" />
 
    \
 
-3. После нажатия кнопки [Выверка] будет открыто окно, в котором необходимо ввести выверяемую сумму по каждой из сторон. В таблице представлены обороты по Кредиторской и Дебиторской задолженностям:
+3. After clicking [Reconcile], a window opens where the reconciliation amount must be entered for each side. The table shows Accounts Receivable and Accounts Payable transactions:
 
    <img src="../.assets/fc0dbdb6-7c7d-4ef7-9db3-32f718f7aa08.png" alt="" width="100%" />
-(1) Сумма выверки обязательно должна равняться нулю.  
-По окончании выбора выверяемых документов нажать кнопку [Выверка]
+(1) The reconciliation total must equal zero.  
+After selecting the documents/transactions to reconcile, click [Reconcile].
 
-## Управление предыдущими выверками
+## Managing Previous Reconciliations
 
-В документе Управления предыдущими выверками отражаются автоматические и ручные виды выверок. Но непосредственно управление (отмена) возможна только для выверов созданных пользователем. (Для отмены автоматических выверок необходима отмена документов оснований - платежей, инвойсов..)
+The Manage Previous Reconciliations window shows both automatic and manual reconciliations. However, only reconciliations created manually by a user can be cancelled directly. To reverse an automatic reconciliation, the originating documents must be cancelled/reversed instead, such as the related payment or invoice.
 
-1. Управление выверками находится в Главном меню → Финансы → Внутренние выверки → Управление предыдущими выверками
+1. Open Main Menu → Financials → Internal Reconciliations → Manage Previous Reconciliations.
 
  <img src="../.assets/35a5c0fb-1dc5-49d1-8930-08a27b4292eb.png" alt="" width="100%" />
 
-2. Перед открытием формы, Система откроет окно выбора критериев, в котором необходимо какой вид выверок будет обрабатываться
+2. Before the form opens, the System displays the selection-criteria window where the reconciliation type to be processed must be selected.
 
 <img src="../.assets/d1d1c6ff-075d-4fc9-949b-dfe06d76cd10.png" alt="" width="100%" />
 
-3. После определения критериев будет открыто окно управления выверками
+3. After the criteria are defined, the reconciliation-management window opens.
 
 <img src="../.assets/5f5b970d-b8f7-4785-8d32-e870dd51756a.png" alt="" width="100%" />
 
-Окно состоит из двух зависимых таблиц Журнала и Подробностей о выверке
+The window consists of two dependent tables: the Reconciliation Journal and Reconciliation Details.
 
-4. Для того чтобы отменить выверку, необходимо выбрать строку в Журнале, удостовериться что выбрана корретная операция выверки, подлежащая отмене
+4. To cancel a reconciliation, select the relevant row in the Journal and verify that the correct reconciliation transaction has been selected.
 
-5. Нажать кнопку [Отменить выверку]
+5. Click [Cancel Reconciliation].
 
-   В результате этого действия выверка будет отменена
+   The reconciliation will be cancelled.
