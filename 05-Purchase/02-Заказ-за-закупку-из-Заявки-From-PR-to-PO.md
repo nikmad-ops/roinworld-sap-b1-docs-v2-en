@@ -1,81 +1,83 @@
-В системе настроена процедура уведомления ответственных сотрудников о наличии документов для обработки.  
-Менеджеру по закупкам с периодичностью в Х минут, на втреннюю почту SAP поступает уведомление о наличии открытых (необработанных) Заявках на закупку.
+The System is configured to notify responsible employees when documents require processing.  
+At regular intervals of X minutes, the Purchasing Manager receives an internal SAP mail notification about open (unprocessed) Purchase Requests.
 
  <img src="../.assets/c1c8828b-a350-4d14-8f33-2a40b8058828.png" alt="" width="100%" />
 
-1. Для ознакомления с содержанием Заявки необходимо выбрать сообщение в верхней части формы. При этом в нижней части формы будет отражено содержание сообщения.
+1. To review the Purchase Request, select the message in the upper part of the form. The message content is displayed in the lower part.
 
-2. Для перехода в Заявку необходимо нажать на Золотую стрелку, размещённую в колонке Doc #
+2. To open the Purchase Request, click the golden arrow in the Doc # column.
 
-3. Будет открыта форма документа Заявка на Закупку
+3. The Purchase Request document opens.
 
- <img src="../.assets/0d844d03-f0b2-4f4e-bcc3-7a2282b1f7d0.png" alt="" width="100%" />Данная Заявка является заданием на подбор Поставщика и согласование сроков поставки и цен. Факт подбора Поставщика и согласование поставки отражается в Заявкe заполнением поля [Поставщик]
+ <img src="../.assets/0d844d03-f0b2-4f4e-bcc3-7a2282b1f7d0.png" alt="" width="100%" />
 
-## Создание Заказа из Заявки
+The Purchase Request is a task to identify a Vendor and agree delivery dates and prices. Once a Vendor is selected and the supply conditions are agreed, this is reflected in the Purchase Request by completing the [Vendor] field.
 
-В момент, когда заказ размещён у поставщика и дальнейших изменений не будет из Заявки создаётся Заказ.
+## Creating a Purchase Order from a Purchase Request
 
-1. Открыть Заказ на Закупку. Из Главного Меню -> Закупки -> Заказ на закупку
+Once the order has been placed with the Vendor and no further changes are expected, a Purchase Order is created from the Purchase Request.
+
+1. Open Purchase Order from Main Menu → Purchasing - A/P → Purchase Order.
 
  <img src="../.assets/73afa457-5865-471f-914a-7f4e4d06464d.png" alt="" width="100%" />
 
-2. В открывшемся окне заполнить реквизиты Бизнес-Партнёра, дату согласованной поставки и, при наличии - номер заказа в системе Поставщика
+2. Complete the Business Partner details, agreed delivery date, and, if applicable, the Vendor's order number.
 
  <img src="../.assets/0382f786-e700-4d74-9cd6-fed0753c45d9.png" alt="" width="100%" />
 
-3. Перейти к переносу данных. Для этого нажать кнопку [Скопировать Из], расположенную в нижней части формы. В выпадающем списке выбрать Заявку на закупку
+3. Click [Copy From] at the bottom of the form and select Purchase Request.
 
  <img src="../.assets/7b49911d-34db-42ad-9e6d-86a07dc0f2fa.png" alt="" width="100%" />
 
-4. Система откроет список активных Заявок на закупку
+4. The System opens the list of active Purchase Requests.
 
  <img src="../.assets/4c11707d-74b9-48bc-9702-0aabbca39e12.png" alt="" width="100%" />
 
-5. В открывшемся окне выбрать необходимую заявку и нажать кнопку формы [Выбрать]
+5. Select the required Purchase Request and click [Choose].
 
-Примечание: в данном окне воможен множественный выбор. Для этого необходимо держать нажатыми клавиши [Ctrl]+[Shift] а выбор делать нажатием кнопки мыши
+Note: multiple selection is available in this window. Hold [Ctrl]+[Shift] and select the documents with the mouse.
 
-6. Будет открыт Ассистент создания документа
+6. The Draw Document Wizard opens.
 
  <img src="../.assets/d3209698-65b7-438b-bf9b-0cc1ee192cfc.png" alt="" width="100%" />
 
-7. В открывшемся окне выбрать пункт [Выбрать] и нажать кнопку [Дальше]
+7. Select [Choose] and click [Next].
 
-8. Будет открыто окно выбора строк для переноса из Заявки в Заказ
+8. The window for selecting rows to copy from the Purchase Request into the Purchase Order opens.
 
-9. Выбор необходимых строк выполняется с нажатием клавиши [Ctrl]. Синяя подсветка строки означает, что она будет скопирована в Заказ.
+9. Hold [Ctrl] while selecting the required rows. A blue highlight means the row will be copied to the Purchase Order.
 
-Источником Количества для каждого товара является Заявка. Если с Поставщиком было согласовано иное количество Заказа, то необходимо внести фактически заказанное количество в соответствующей колонке. При этом, если количество меньше изначально запрошенного, то строка в Заявке на Закупку останется открытой.
+The Purchase Request is the source of the Quantity for each item. If a different quantity was agreed with the Vendor, enter the actual ordered quantity in the relevant column. If the ordered quantity is lower than the original requested quantity, the corresponding row in the Purchase Request remains open.
 
  <img src="../.assets/6f1a77c3-b77f-46c7-88df-e951be2fabd1.png" alt="" width="100%" />
 
-10. После проверки данных (товар, количество, единица измерения, склад для поставки и Key\\Department центров нажать кнопку [Завершить]
+10. After verifying Item, Quantity, Unit of Measure, delivery Warehouse, and Key/Department dimensions, click [Finish].
 
-11. Система скопирует выбранные строки в таблицу Заказа.
+11. The System copies the selected rows to the Purchase Order table.
 
-12. Проверить согласованную Дату поставки и выбрать подпись в поле Ответственный
+12. Verify the agreed Delivery Date and select your signature in the Owner field.
 
  <img src="../.assets/ad2e0817-4054-44ea-9647-6c1708721b21.png" alt="" width="100%" />
 
-13. Проверить цены в таблице
+13. Verify the prices in the table.
 
-14. Сохранить измения в документе, для этого нажать кнопку [Добавить]
+14. Click [Add] to save the document.
 
-## Результат создания Заказа на закупку.
+## Result of Creating a Purchase Order
 
-После добавления документа в Систему произойдёт следующие обновления:
+After the document is added to the System, the following updates occur:
 
-### Заявка на закупку.
-Строки для которых создан Заказ на закупку в количестве товара соответстуюшем запрошенному в Заявке - строки будут закрыты. Это отражается окрашиванием строк серым цветом:
+### Purchase Request
+Rows for which a Purchase Order has been created for the full requested quantity are closed. Closed rows are shown in gray.
 
  <img src="../.assets/9734b5c6-80a0-4c7f-a1e7-96e05092cc8f.png" alt="" width="100%" />
 
-### Складские отчёты
-Заказанное количество будет указано в складских отчётах как Закупки(заказано)
+### Inventory Reports
+The ordered quantity is shown in inventory reports as Purchases (Ordered).
 
  <img src="../.assets/cd4b06aa-2baa-471a-8288-078fe1be26e1.png" alt="" width="100%" />
 
-### Уведомления
-Создателю Заявки на закупку по внутренней почте будет отправлено уведомление о копировании Заявки в Заказ
+### Notifications
+The creator of the Purchase Request receives an internal SAP mail notification that the Purchase Request has been copied to a Purchase Order.
 
  <img src="../.assets/2f835115-d3e6-4d7f-be34-ed0de9329714.png" alt="" width="100%" />
