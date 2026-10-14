@@ -1,41 +1,41 @@
-# Виды объектов SAP Business One:
-## Master Data \\ Основные данные
-К этому виду относятся справочники (справочник товаров, справочник бизнес партнёров, справочник складов и.т.д). Хранение данных внутри справочника реализовано посредством Карточек (карточка товара, карточка бизнес партнёра, карточка склада). Каждая карточка имеет присвоенный код (код товара, код бизнес партнёра, код склада и.т.д.). Код является уникальным идентификатором. Создать внутри одного справочника карточки с одинаковыми кодами невозможно. Помимо Кода, карточка содержит другие атрибуты, специфичные для этого Справочника (для товаров - единицы измерения, названия. Для бизнес партнёров - названия, реквизиты компании).  
-Данные в карточке могут быть изменены следующим образом:  
-Изменение Кода - возможно до первого использования карточки в документах или настройках.  
-Изменение Данных - до первого использования возможно без ограничений, после проводок с использованием карточки вносятся ограничения. Например: изменение Единицы измерения у товара, который находится на складе невозможно.  
-Удаление карточки возможно до первого использования в документах или настройках.
+# Types of SAP Business One Objects
+## Master Data
+This category includes master-data records such as Item Master Data, Business Partner Master Data, warehouses, etc. Data in each master-data object is stored as individual records (for example, an item record, business partner record, or warehouse record). Each record has an assigned Code (Item Code, Business Partner Code, Warehouse Code, etc.). The Code is a unique identifier. Two records with the same Code cannot be created within the same master-data object. In addition to the Code, each record contains attributes specific to that object (for items - units of measure and names; for business partners - names and company details).  
+Data in a master-data record can be changed as follows:  
+Changing the Code - possible until the record is first used in documents or configuration.  
+Changing Data - unrestricted before first use; after transactions have been posted using the record, restrictions apply. For example, the Unit of Measure cannot be changed for an item that has stock on hand.  
+Deleting a record is possible until it is first used in documents or configuration.
 
-## Dropdown list \\ Второстепенные данные \\ Списки
-К этому виду относятся наборы данных, собранные в виде таблиц и списков. У подобных данных по аналогии с Основными данными имеется уникальный Код, и набор связанных с этим кодом значений. Списки делятся на системные (предопределённые наборы данных, например список стран, налогов) и пользовательские (наборы определяемые в процессе внедрения Системы и её использования). Использование списков позволяет облегчить заполнение форм и документов. Пользователь выбирает доступное значение из выпадающего списка без необходимости вводить текст с клавиатуры. Также, использование списков стандартизирует заполнение полей т.е. гарантирует одинаковость значений. Пользовательские списки можно назначить на 90% полей доступных в Системе. Выбор значения из списка можно подчинить логике автоматизации. (При значении поля А равное Х, выбрать в поле В значение из списка равное Y)  
-Удаление записей из системных списков возможно с ограничениями.  
-Удаление записей из пользовательских списков возможно если запись не была использована в документе или настройке.
+## Dropdown Lists / Secondary Data
+This category includes datasets stored as tables and lists. Similar to Master Data, these records have a unique Code and a set of values associated with that Code. Lists can be system-defined (predefined datasets such as countries and taxes) or user-defined (datasets configured during implementation and subsequent use of the System). Lists simplify the completion of forms and documents: the user selects an available value from a drop-down list instead of typing free text. Lists also standardize field completion by ensuring consistent values. User-defined lists can be assigned to most fields available in the System. The selected list value can also be controlled by automation logic (for example: if Field A equals X, select value Y from the list in Field B).  
+Deleting records from system lists is subject to restrictions.  
+Deleting records from user-defined lists is possible if the record has not been used in a document or configuration.
 
-## Marketing Documents \\ Документы.
-Под понятием Маркетинговые документы в SAP Business One подразумеваются все виды документов. Это могут быть документы Продаж, Закупок или Складские проводки. Каждый документ имеет уникальный технический идентификатор (DocEntry) который увеличивается по инкременту +1 внутри каждого типа документа. И Пользовательский идентификатор (DocNum) - инкремент +1 в рамках каждого типа документа и одновременно в рамках временного периода (год). Одномоментно в Системе могут существовать несколько Серий генерации (нумерации) DocNum. Например, серия нумерации для Заказов относящихся к Foodtruck (от 1 до ххх) и серия нумерации для Заказов относящихся к Bakery (от 1 до ххх). Использование Серии нумерации позволяет назначить Префикс для номеров документов. Например - FT2026\\1 и BK2026\\1.  
-Маркетинговые документы подразделяются на документы создающие бухгалтерскую проводку(фактические), и документы не создающие проводок (плановые).  
-К плановым документам относятся: Коммерческое предложение, Заявка, Заказ, Черновик, Инвентаризационная ведомость, Производственный заказ.  
-К фактическим документам относятся: Отгрузка\\Поступление, Продажа\\Закупка, Платёж, Списание со склада, Поступление на склад.  
-Удаление документов, после их сохранения невозможно (исключение - Черновик).  
-Внесение изменений в Плановые документы, возможно при условии что они находятся в Открытом статусе. После закрытия, только поля комментариев доступны для редактирования.  
-Внесение изменения в Фактические документы невозможно. После сохранения доступны только поля комментариев  
-Для внесения изменений в Фактуру документа в SAP Business One применяются корректирующие документы. Использование тех или иных документов зависит от контекста ситуации. Например, при допущенной ошибке в Продаже создаётся документ Отмена Продажи. При согласовании скидки или возврата вместо Отмены создаётся корректирующий документ Credit Memo  
-Для отмены складских документов создаётся документ с зеркальным движением ТМЦ (для Списания - Поступление)
+## Marketing Documents
+In SAP Business One, the term Marketing Documents covers the main transactional document types. These can be Sales, Purchasing, or Inventory documents. Each document has a unique technical identifier (DocEntry), incremented by +1 within each document type, and a user-facing document number (DocNum), incremented by +1 within each document type and numbering period (year). Several DocNum numbering series can exist in the System at the same time. For example, one numbering series can be used for Foodtruck orders (1 to xxx), and another for Bakery orders (1 to xxx). A numbering series can also include a prefix, for example FT2026\1 and BK2026\1.  
+Marketing Documents are divided into documents that create accounting postings (actual documents) and documents that do not create postings (planning documents).  
+Planning documents include: Sales Quotation, Purchase Request, Order, Draft, Inventory Counting, Production Order.  
+Actual documents include: Delivery/Goods Receipt PO, A/R Invoice/A/P Invoice, Payment, Goods Issue, Goods Receipt.  
+Documents cannot be deleted after they are saved, with the exception of Drafts.  
+Planning documents can be changed while they have Open status. After they are closed, only comment fields remain editable.  
+Actual documents cannot be changed. After they are saved, only comment fields remain editable.  
+To correct the substance of a document, SAP Business One uses corrective/reversing documents. The document used depends on the business context. For example, if an A/R Invoice contains an error, an A/R Invoice Cancellation document can be created. If a discount or return has been agreed with the customer, an A/R Credit Memo is created instead.  
+Inventory documents are reversed by creating a document with the opposite inventory movement (for example, Goods Receipt to reverse Goods Issue).
 
-## Standard Reports \\ Стандартные отчёты.
-К стандартным отчётам SAP относятся отчёты предустановленные компанией SAP. При запуске пользователю предоставляется возможность уточнить (установить фильтр) критерии запуска отчёта. Как правило это атрибуты из основного источника данных, используемых при генерации отчета (Например для отчёта о реализации это Группа товаров, даты документа). Стандартные отчёты формируются в виде простых (plain) таблиц. Некоторые стандартные отчёты имеют вид иерархии (Дебиторская\\Кредиторская задолженности, Баланс). Состав полей отчёта предпределён и не может быть расширен.
+## Standard Reports
+SAP standard reports are reports delivered by SAP. When a report is launched, the user can define filtering criteria. These are typically attributes from the primary data source used by the report (for example, Item Group and document dates for a sales report). Standard reports are generally displayed as plain tables. Some standard reports use a hierarchical structure, such as Customer/Vendor Ageing and Balance Sheet. The set of report fields is predefined and cannot be extended.
 
-## Choose from the list \\ Выбор из списка
-Вид стандартных отчётов, формирующихся налету. Данные отчёты позволяют сформировать списки из Справочников или Документов по критериям указанным в самом документе\\справочнике. Например - список товаров. Данный отчёт запускается из Справочника товаров, когда Справочник находится в режиме Поиск. Отчёты Выбор из списка, как следует из названия позволяет пользователю открыть документ \\ карточку справочника простым кликом мышки. Набор полей отчётов этого вида может быть сконфигурирован, но ограничен. В него могут быть добавлены только поля, которые имеются в связанном документе \\ справочнике.
+## Choose from List
+A type of standard report generated on the fly. These reports create lists of Master Data or Documents based on criteria entered in the related document/master-data form. For example, an item list can be generated from Item Master Data while the form is in Find Mode. As the name suggests, a Choose from List report allows the user to open the relevant document/master-data record by clicking it. The set of fields in this type of report can be configured, but only fields available in the related document/master-data object can be added.
 
-## Drag and Relate \\ Drag and Relate
-Вид стандартных отчётов SAP. Формирование этого вида отчётов выполняется путём перетаскивания поля из открытого документа\\справочника на соответствующий раздел Главного меню. (см. отдельную инструкцию по даному виду отчётов). Состав полей отчёта предопределён и не может быть расширен.
+## Drag and Relate
+A type of SAP standard report. This type of report is generated by dragging a field from an open document/master-data record onto the corresponding Main Menu section (see the separate instruction for this report type). The report field set is predefined and cannot be extended.
 
-## User Defined \\ Пользовательские отчёты
-Пользовательские отчёты это набор отчётов, создаваемый под требования пользователей. Набор полей, логика расчёта и используемые источники данных ограничены только их наличием в базе данных.
+## User-Defined Reports
+User-defined reports are reports created to meet user requirements. Their fields, calculation logic, and data sources are limited only by the data available in the database.
 
-## Alert \\ Уведомления
-Подвид пользовательских отчётов, рассылаемых по внутренней SAP почте. Уведомление может быть настроено для отправки по событию создания какой-то записи в Системе (например - создан новый документ) или на регулярной основе (например - Продажи за период, рассылаемые раз в день\\неделю). Так как отчёт является пользовательсим, то состав полей, логика может быть сконфигурирована под потребности пользователя.
+## Alerts
+A type of user-defined report distributed through SAP internal mail. An alert can be configured to run when a specific event occurs in the System (for example, when a new document is created) or on a recurring schedule (for example, period sales sent once per day/week). Because the report is user-defined, its fields and logic can be configured to meet user requirements.
 
-## Dashboard \\ Виджеты
-Подвид пользовательских отчётов. Их отличительной особенностью является онлайн отображение данных прямо на рабочем столе пользователя. Задержка обновления данных на рабочем столе зависит от настройки и составляет от 1 до 3 минут. Внешний вид виджетов является ограничением, он предопределён Системой, но данные которые он отображает могут быть сконфигурированы под потребности пользователя.
+## Dashboards
+A type of user-defined report whose distinctive feature is the online display of information directly on the user's desktop. The desktop refresh delay depends on configuration and is typically 1 to 3 minutes. The visual format of the widgets is predefined by the System, while the data displayed can be configured to meet user requirements.
