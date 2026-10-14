@@ -1,32 +1,32 @@
-## Типы спецификаций
+## Bill of Materials Types
 
-В SAP Business One существуют следущие типы Спецификаций:
+SAP Business One supports the following Bill of Materials (BOM) types:
 
-| Тип | Англ.название | Назначение | Особенности |
-|-----|---------------|------------|-------------|
-| Набор | Assembly      | В проекте Roin World не используется |             |
-| Комплект | Sales         | Спецификация используется для товаров, реализуемых через кассу (Foodtruck). Для такой спецификации не запускается процесс производства, а при добавлении Родительского товара в документ продажи - добавляет в него компоненты спецификации. При проводке документа продажи компоненты списываются со склада. | Родительский товар обязательно должен быть нескладируемой позицией.  |
-| Изделие | Production    | Спецификация используется для всех производственных позиций - Готовая продукция и Полуфабрикаты. | Родительский товар - складируемый. Проводка производства обязательна |
-| Типовой набор | Template      | В проекте Roin World не используется |             |
+| Type | SAP Name | Purpose | Specifics |
+|------|----------|---------|-----------|
+| Assembly | Assembly | Not used in the Roin World project | |
+| Sales | Sales | Used for items sold through the POS (Foodtruck). No production process is started. When the parent item is added to a sales document, the BOM components are added to that document. When the sales document is posted, the components are issued from inventory. | The parent item must be a non-inventory item. |
+| Production | Production | Used for all manufactured items: Finished Goods and Semi-Finished Goods. | The parent item is an inventory item. Production posting is required. |
+| Template | Template | Not used in the Roin World project | |
 
-## Узлы спецификации
+## BOM Levels
 
-Под узлами спецификации понимаются разветвления обусловленные вложением в родительскую спецификацию дочерних спецификаций (полуфабрикатов). Максимальная вложенность спецификаций ограничена только производительностью системы. SAP рекомендует ограничивать вложенность на уровне 10-15 уровней. На практике, для каждого уровня вложенности при производстве потребуется разузлование и проводка отдельного производственного заказа.  
-(1) Спецификация первого уровня  
+BOM levels are created when child BOMs (semi-finished products) are included in a parent BOM. The maximum nesting depth is limited only by System performance. SAP recommends keeping nesting to approximately 10-15 levels. In practice, each production level requires BOM explosion and posting of a separate Production Order.  
+(1) First-level BOM  
 
-(2) Спецификации второго уровня  
+(2) Second-level BOMs  
 
  <img src="../.assets/e7265384-4e78-410c-86e7-6c977d2469e7.png" alt="" width="100%" />
 
-## Просмотр спецификации
+## Viewing a Bill of Materials
 
-Для просмотра, спецификация может быть открыта одним из следующих способов:
+A BOM can be opened in one of the following ways:
 
-* Из главного меню Производство → Спецификация
+* From the Main Menu: Production → Bill of Materials
 <img src="../.assets/479fead9-05e0-4124-bc2f-4fb768a9fbe8.png" alt="" width="100%" />
 
 \  
-* Из карточки товара. На вкладке Производственные данные по нажатию золотой стрелки в поле Тип спецификации
+* From Item Master Data. On the Production Data tab, click the golden arrow in the Bill of Materials Type field.
 
   <img src="../.assets/2772f250-d45c-47a7-b694-77b1f0448bf5.png" alt="" width="100%" />
 
@@ -37,7 +37,7 @@
 \
 
 \  
-* Из карточки товара. На любой вкладке нажать правой кнопкой мыши для открытия Контекстного меню, где необходимо выбрать пункт Спецификация
+* From Item Master Data. On any tab, right-click to open the context menu and select Bill of Materials.
 
   <img src="../.assets/0a4755b2-a83b-4bc9-832f-79d8c81abf31.png" alt="" width="100%" />
 
@@ -46,20 +46,20 @@
 \
 
 \  
-## Дополнительное количество и Планируемый средний объём производства
+## Additional Quantity and Planned Average Production Quantity
 
-(!) Использование описываемого механизма опционально. И изначально все спецификации загружены без заполнения этих полей  
-Данные поля используются для добавления в Спецификацию Фиксированного расхода сырья на объём производства Х.  
-Поле [План.ср.объём производства] - количество родительского товара производимого за один прогон. Например - блинная сковорода на 4 блина.  
-Поле [Дополнительное количество] - количество компонента единожды используемое для каждого прогона.  
-Другими словами - когда будет создан производственный заказ на 8 блинов, то дополнительное количество будет посчитано\\списано дважды. Заказ на 2 блина включит в себя дополнительное количество единожды.  
-(При этом, основное количество будет считаться на каждый новый блин добавленный в заказ).
+(!) Use of this mechanism is optional. Initially, all BOMs were loaded without these fields being populated.  
+These fields are used to add a fixed quantity of a component for a defined production batch size.  
+The [Planned Average Production Quantity] field specifies the quantity of the parent item produced in one production run. For example, a pancake pan may produce 4 pancakes per run.  
+The [Additional Quantity] field specifies the quantity of a component consumed once per production run.  
+In other words, if a Production Order is created for 8 pancakes, the Additional Quantity will be calculated/issued twice. An order for 2 pancakes will include the Additional Quantity once.  
+(The base component quantity is still calculated for every additional pancake in the order.)
 
-## Создание Спецификации
+## Creating a Bill of Materials
 
-Для создания новой Спецификации, необходимо:
+To create a new BOM:
 
-1\. Открыть карточку товара и через Контекстное меню открыть форму Спецификации.
+1. Open Item Master Data and open the Bill of Materials form from the context menu.
 
  <img src="../.assets/b25b7e36-1713-43a4-8d53-be0e1cf807dd.png" alt="" width="100%" />
 
@@ -68,19 +68,19 @@
 \
 
 \  
-2\.Заполнить заголовок и таблицу спецификации  
-(1) Указать код\\название производимого товара, тип спецификации и количество производимого товара для которого в таблице будет введён расчёт компонентов  
-(2) Указать код\\название компонентов, необходимых для производства  
-(3) Указать склад списания компонентов, на этом складе будет формироваться потребность в сырье  
-(4) Указать количество компонента, необходимого на количество родительского товара, указанного в пункте (1)  
-(5) Указать дополнительное количество с учётом Планируемого среднего объёма  
-(6) Проверить источник цены для компонентов (на момент написания - Base of Purchase), при этом цена будет заполнена если для товара в прайс листе указана его стоимость. Это расчётная стоимость, фактическая будет подсчитана в производственном заказе с учётом себестоимости компонента отпущенного к заказу  
-(7) Указать построчно Key\\Milestone и Department центры (будут использованы при списании компонентов)  
-(8) Указать Key\\Milestone и Department центры в заголовке (будут использованы при списании родительского товара)  
-(9) Нажать кнопку Стрелка вниз, для расчёта и записи расчётной стоимости производства по спецификации  
+2. Complete the BOM header and table.  
+(1) Enter the code/name of the manufactured item, select the BOM type, and specify the quantity of the parent item for which the component quantities in the table are defined.  
+(2) Enter the code/name of the components required for production.  
+(3) Specify the warehouse from which the components will be issued. Material requirements will be generated for this warehouse.  
+(4) Specify the component quantity required for the parent quantity entered in item (1).  
+(5) Specify the Additional Quantity taking into account the Planned Average Production Quantity.  
+(6) Verify the price source for the components (at the time this instruction was written: Base of Purchase). The price is populated if a price has been maintained for the item in the relevant price list. This is an estimated cost; the actual cost is calculated in the Production Order based on the actual cost of the components issued to the order.  
+(7) Specify Key/Milestone and Department dimensions for each row. These will be used when components are issued.  
+(8) Specify Key/Milestone and Department dimensions in the header. These will be used for the parent item receipt.  
+(9) Click the Down Arrow button to calculate and save the estimated production cost based on the BOM.
 
  <img src="../.assets/8d3d5795-c4ba-4dc3-8af8-e98b4a7d1854.png" alt="" width="100%" />
 
-3. Опционально в спецификацию могут быть добавлены построчные примечания и текстовые строки с указанием технологических особенностей производства.
+3. Optionally, row-level remarks and text rows describing production/technology specifics can be added to the BOM.
 
-4. Нажать кнопку [Добавить] для сохранения внесённых изменений
+4. Click [Add] to save the changes.
