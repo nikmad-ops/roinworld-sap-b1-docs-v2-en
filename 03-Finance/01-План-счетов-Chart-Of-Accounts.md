@@ -1,47 +1,48 @@
-## План счетов
-В SAP Business One загружен действующий План счетов Roin World со следующими необходимыми для функционирования SAP счетами:
+## Chart of Accounts
+The current Roin World Chart of Accounts has been loaded into SAP Business One, including the accounts required for SAP operation:
 
-* Технические счета
-* Контрольные счета
-План счетов загружен в виде иерархической структуры с размещением активных (postable) счетов на пятом уровне вложенности.
+* Technical accounts
+* Control accounts
 
-## Внешний вид
-Объект План Счетов состоит из трёх секций:  
-(1) 'Конторки' выбора раздела Плана счетов (первый уровень счёта)  
-(2) Секция отображения \\ выбора счёта из стуктуры (уровни счетов 2-5)  
-(2) Секция вывода информации о выбранном счёте  
+The Chart of Accounts is loaded as a hierarchical structure, with active (postable) accounts placed at hierarchy level 5.
+
+## Layout
+The Chart of Accounts object consists of three sections:  
+(1) Tabs used to select a Chart of Accounts section (account level 1)  
+(2) Section for displaying/selecting an account from the hierarchy (account levels 2-5)  
+(3) Section showing information about the selected account  
 
  <img src="../.assets/317de151-69d7-4b59-8c19-f56973b6eaa4.png" alt="" width="100%" />
 
-## Виды счетов
-Системно, в SAP Business One предопределены, следующие виды счетов:
+## Account Types
+SAP Business One has the following predefined account types:
 
-* Доходы: Cчета Выручки \\ Revenue
-* Расходы:Счета затрат, себестоимости продаж (COGS \\ Expense)
-* Прочее: Все остальные счета
+* Revenue: Revenue accounts
+* Expenses: Expense and Cost of Goods Sold (COGS) accounts
+* Other: all remaining accounts
 
-## Настройки счетов
-Набор доступных для настройки свойств счёта определяется Видом счёта. Помимо этого, в Плане счетов имеются настройки, которые позволяют автоматизировать заполнение полей документов, связанных со счетами.  
-Для Roin World доступны следующие настройки счетов:
+## Account Settings
+The set of configurable account properties depends on the Account Type. In addition, the Chart of Accounts contains settings used to automate completion of document fields associated with the account.  
+The following account settings are relevant for Roin World:
 
-### Валюта счёта
-настройка определяет в каких валютах на счёт может быть выполнена проводка. По-умолчанию все счета ведутся в двух валютах Локальной (EGP) и Системной (SYS-USD). Если для счёта выбрана валюта, отличная от локальной(Иностранная), то проводки по такому счёту возможны только в этой валюте. Также счёт может быть обозначен как Все валюты, эта опция позволяет выполнять проводку в любой из существующих в Системе валют. Но, на практике, такое совместное использование счёта вносит свои сложности. Стоит отметить, что настройка валюты счёта может быть выполнена до первой проводки по этому счёту. После первой проводки валюта счёта может быть изменена только в сторону расширения списка валют - то есть счёт может быть расширен до опции Все валюты, но не в обратном направлении.
+### Account Currency
+This setting determines the currencies in which postings can be made to the account. By default, all accounts are maintained in two currencies: Local Currency (EGP) and System Currency (SYS-USD). If an account is assigned a currency other than the local currency (a Foreign Currency), postings to that account can be made only in that currency. An account can also be defined as All Currencies, allowing postings in any currency available in the System. In practice, however, using one account with multiple currencies can create additional complexity.  
+The account currency can be configured until the first posting is made to the account. After the first posting, the currency setting can only be broadened - for example, an account can be changed to All Currencies, but not restricted again afterward.
 
-### Конфиденциально
-настройка видимости счёта и его баланса для пользователей. Для группы пользователей, а также для каждого из пользователей может быть настроена авторизация на доступ к счетам, имеющих это свойство
+### Confidential
+Controls visibility of the account and its balance to users. Access authorization for accounts with this property can be configured for user groups and individual users.
 
-### Счёт БП\\Контрольный счёт
-свойство счёта Главной Книги, которое связывает аналитический учет расчетов с контрагентами (дебиторами и кредиторами) с общей финансовой отчетностью
+### Business Partner Account / Control Account
+A G/L account property that links Business Partner subledger accounting (customer and vendor balances) with the general financial statements.
 
-### Счёт денежных средств
-### свойство для определения кассовых или банковских счетов
+### Cash Account
+Property used to identify bank and cash accounts.
 
-**Блокировать ручную проводку**
+### Block Manual Posting
+Prevents the account from being used in manual Journal Entries. This ensures that postings to the account are supported by an originating document.
 
-свойство которое делает невозможным использование счёта в ручных Бухгалтерских Операциях. Что гарантирует наличие документа основания.
+### Relevant to Cash Flow
+Applicable to cash accounts. Activates validation of the Cash Flow Assignment field used in Journal Entries, Incoming Payments, and Outgoing Payments.
 
-### Включен для ДДС
-настройка применима для Счетов денежных средств, активирует проверку на заполнение колонки Движение Денежных Средств, расположенную в Бухгалтерской операции, Входящем и Исходящем платежах
-
-### Key\\Milestone и Department
-свойство применимое для счетов Доходов и Расходов. Активирует механизм проверки заполнения полей кост-центров в документах, связанных со счётом. Если в дополнение к чек боксу в соответствующем поле свойств счёта указан кост центр, то он будет предзаполнен в документе связанном со счётом
+### Key/Milestone and Department
+Applicable to Revenue and Expense accounts. Activates validation of the relevant cost-center fields in documents associated with the account. If a cost center is also specified in the account settings, it will be proposed automatically in documents using that account.
