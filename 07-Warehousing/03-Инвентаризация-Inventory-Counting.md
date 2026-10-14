@@ -1,1 +1,1 @@
-# # Инвентаризация | Inventory Counting
+# Inventory Counting
