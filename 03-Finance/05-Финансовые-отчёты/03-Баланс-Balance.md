@@ -1,26 +1,27 @@
-Отчёт Баланс (Balance sheet) расположен в Главном меню по пути  
-Главное меню → Финансы→Финансовые отчёты→Финансы→ Баланс  
+The Balance Sheet report is located under:  
+Main Menu → Financials → Financial Reports → Financial → Balance Sheet  
  <img src="../../.assets/791a5a0f-4fe8-4f53-b46c-4296b53d6df8.png" alt="" width="100%" />
 
-1. Перед открытием отчёта, система откроет форму Критерии выбора в которой необходимо указать правила отбора проводок и определить внешний вид отчёта
+1. Before opening the report, the System displays the Selection Criteria form, where posting-selection rules and report layout must be defined.
 
    <img src="../../.assets/98c15ce3-bd89-462b-a355-82d44bc63b59.png" alt="" width="100%" />
 
-(1) Даты проводок для показа в отчёте  
-(2) Внешний вид и правила показа счетов и то, в каком виде эти счета будут отражены  
-(3) Содержание столбцов отчёта и (при наличии) шаблон отчёта  
-В отличии от PnL - Баланс не имеет расширенной настройки для выбора кост центра в качестве критерия. Это обусловлено тем, что балансовые счета (и проводки по ним) такой настройки не имеют.
+(1) Posting dates to be included in the report  
+(2) Account display settings and the way accounts will be presented  
+(3) Report column contents and, if applicable, the report template  
 
-2. После установки критериев - нажать кнопку [OK]
+Unlike the P&L, the Balance Sheet does not have an extended option to select a cost center as a criterion. This is because balance-sheet accounts and their postings do not use that setting.
 
-3. Будет открыт отчёт Баланс. Стандартно отчёт открывается в виде шаблона с результирующими строками. Для выбора уровня раскладки информации необходимо сменить уровень счетов. Для Roin World все активные счета загружены на 5м уровне
+2. After setting the criteria, click [OK].
+
+3. The Balance Sheet opens. By default, the report opens using a template with summary rows. To choose the level of detail, change the account level. For Roin World, all active accounts are loaded at level 5.
 
    \
 
 <img src="../../.assets/a336f231-42b0-4c79-bfe4-2aaa12ad6a23.png" alt="" width="100%" />
 
-4. Для того чтобы скрыть результирующие строки, необходимо установить флаг [Скрыть заголовок]
+4. To hide the summary/header rows, select [Hide Titles].
 
 <img src="../../.assets/bd42d52e-6242-4d7c-8309-198f5e7ce078.png" alt="" width="100%" />
 
-В данном примере на этапе выбора критериев выбран вывод сумм в локальной валюте в первую колонку, а для второй колонки выбрана системная валюта (SYS) которая равна Доллару США. Поскольку Система ведёт параллельную запись в двух валютах, то каждая транзакция отражается в EGP и SYS. При этом курс для расчёта SYS берётся на дату документа.
+In this example, the selection criteria specify amounts in Local Currency in the first column and System Currency (SYS), which corresponds to USD, in the second column. Because the System records transactions in both currencies in parallel, every transaction is reflected in EGP and SYS. The SYS exchange rate used is the rate valid on the document date.
