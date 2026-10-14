@@ -1,120 +1,120 @@
-# Важный дисклеймер:
-Управление и ввод данных с использованием быстрых клавиш, нажимаемых на клавиатуре является оптимальным способом взаимодействия с Системой. Но, следует учесть, что **клавиша [Enter] является самой опасной из клавиш**. Её нажатие в момент внесения данных в Документ выполнит сохрание (проводку) документа. В случае некоторых документов (Отгрузка\\Продажа, Поступление\\Закупка, Платёж, Списание со склада, Поступление на склад) это действие необратимо и потребуется создание отменяющих документов.  
-**Клавижа [Enter] не является в SAP кнопкой перехода между строками\\полями. Эта функция назначена на клавижу [Tab]**  
-По запросу пользователя, имеется возможность отключить подобное поведение клавиши [Enter]. Для изменения поведения клавиши обратитесь в SAP поддержку.  
-При этом, **клавиша [Enter] является одновременно и самой полезной клавишей в SAP**.  
-Грань между опасностью и пользой находится в ежесекундном осознании текущего состояния Form Mode (см.ниже в разделе Form Mode).
+# Important disclaimer:
+Using keyboard shortcuts for navigation and data entry is the most efficient way to work with the System. However, please note that **the [Enter] key is the most dangerous key**. Pressing it while entering data into a Document may save (post) the document. For some documents (Delivery/A/R Invoice, Goods Receipt PO/A/P Invoice, Payment, Goods Issue, Goods Receipt), this action is irreversible and a reversing document will be required.  
+**In SAP, the [Enter] key is not used to move between rows/fields. This function is assigned to the [Tab] key.**  
+At the user's request, this behavior of the [Enter] key can be disabled. To change the key behavior, contact SAP support.  
+At the same time, **the [Enter] key is also one of the most useful keys in SAP**.  
+The difference between risk and benefit depends on constantly understanding the current Form Mode (see the Form Mode section below).
 
-# Рабочее пространство
-В данном разделе используются стандартизированные название элементов с их близким переводом на русский язык. Пожалуйста, запомните их. Они будут использованы в дальнейшем по тексту инструкции, при обучении и поддержке.
+# Workspace
+This section uses standardized names for interface elements. Please remember them, as these terms are used throughout the documentation, training, and support.
 
-Внешний вид рабочего пространства SAP Business One:
+SAP Business One workspace:
 
  <img src="../.assets/cdd310b6-291b-4487-9a28-04a9cb2ee90f.png" alt="" width="100%" />
 
-(1) Horizontal menu \\ Горизонтальное меню  
-(2) Company Name|User \\ Название Компании|Пользователь. Является кнопкой!  
-(3) Tool Panel \\ Панель инструментов  
-(4) Hamburger \\ Гамбургер. Кнопка скрытия\\отображения Главного меню  
-(5) Modules \\ Модули. Кнопка перехода к модулям Главного меню  
-(6) Main Menu Search \\ Поиск Главного меню. Поиск по разделам Главного меню.  
-(7) Main Menu \\ Главное меню. Разделы Главного меню.  
-(8) Drag&Relate. Кнопка перехода к разделам отчётности Drag and Relate  
-(9) Corporate Search \\ Корпоративный поиск. Поиск по данных в Системе  
-(10) Status bar \\ Строка состояния.  
-(11) User info bar \\ Пользовательская информационная строка  
-(12) Fiori Desktop \\ Рабочий стол Fiori  
+(1) Horizontal menu  
+(2) Company Name|User. This is a button.  
+(3) Tool Panel  
+(4) Hamburger. Shows/hides the Main Menu  
+(5) Modules. Opens the module sections of the Main Menu  
+(6) Main Menu Search. Searches the sections of the Main Menu  
+(7) Main Menu. Main Menu sections  
+(8) Drag&Relate. Opens the Drag and Relate reporting sections  
+(9) Corporate Search. Searches data stored in the System  
+(10) Status bar  
+(11) User info bar  
+(12) Fiori Desktop  
 
-## (1) Horizontal menu \\ Горизонтальное меню
-Привычное для Windows приложений меню. Состоит как из стандартного набора Файл, Вид, Правка, Помощь так и специфичных для SAP разделов Данные, Модуль, Инструменты, Окно.  
-Состав элементов отображаемых в выпадающих вниз меню зависит от того какой объект открыт в Рабочем пространстве. Раздер Модуль - дублирует разделы Главного меню, что позволяет использовать его для открытия различных форм без его использования.  
-Важные элементы:  
-*Вид - Пользовательские поля*. Позволяет управлять отображением дополнительной панелью Формы на которой содержатся пользователькие поля.  
-*Вид - Скорректировать ширину столбца*. Позволяет оптимизировать отображение колонок в таблицах, расширив их под содержание  
-*Инструменты - Журнал изменений*. Открывает лог изменений выполненных в открытом документе\\карточке справочника  
-*Инструменты - Горячие клавиши пользователя*. Позволяет выполнить назначение действий на клавиши F2-F12 клавиатуры.  
-*Окно-Закрыть все*. Закрывает все открытые на рабочем пространстве окна.  
-*Окно-Закрыть все другие*. Закрывает все открытые на рабочем пространстве окна, оставляя открытым только то окно, которое активно в данный момент.
+## (1) Horizontal menu
+A standard Windows-style application menu. It includes the usual File, View, Edit, and Help sections, as well as SAP-specific sections such as Data, Modules, Tools, and Window.  
+The items shown in the drop-down menus depend on which object is currently open in the Workspace. The Modules section duplicates the Main Menu sections and can therefore be used to open forms without using the Main Menu.  
+Important items:  
+*View - User-Defined Fields*. Controls the additional form panel containing user-defined fields.  
+*View - Fit Column Width*. Optimizes the display of table columns by resizing them to fit their contents.  
+*Tools - Change Log*. Opens the change log for the current document/master-data record.  
+*Tools - User Shortcuts*. Allows actions to be assigned to the F2-F12 keys.  
+*Window - Close All*. Closes all windows currently open in the workspace.  
+*Window - Close All But This*. Closes all open windows except the currently active window.
 
-## (2) Company Name|User \\ Название Компании|Пользователь
-Кнопка индикатор, нажатие открывает список доступных SAP баз данных.
+## (2) Company Name|User
+An indicator button. Clicking it opens the list of available SAP company databases.
 
-## (3) Tool Panel \\ Панель инструментов
-Горизонтальная полоса с расположенными на ней кнопками-иконками. Активность кнопок зависит от того, какая форма\\документ в настоящий момент открыта и активна. Помимо самой формы, активность зависит от состояния формы (Режим поиска\\Режим добавления записи\\Режим просмотра)  
-Иконки сгруппированы по смыслу использования
+## (3) Tool Panel
+A horizontal bar containing icon buttons. Button availability depends on the form/document that is currently open and active. It also depends on the form status (Find Mode/Add Mode/View Mode).  
+Icons are grouped by their purpose.
 
-### Файл
+### File
  <img src="../.assets/0aca2ea0-e651-47da-ad3e-297479c063ef.png" alt="" width="100%" />
 
-**Превью** - предпросмотр печатной формы. Для просмотра открывается формат, который установлен по-умолчанию для документа  
-**Печать** - печать печатной формы. Также как и для превью, на печать отправляется формат, который установлен по-умолчанию для документа  
-**SAP Business One Mailer** - отправка документа по внутренней почте SAP.  
-**SMS** - модуль отправки документов по СМС для Roin World не активирован  
-Факс - модуль отправки документов факсом для Roin World не активирован  
-**MS Excel** - экспорт данных из открытого окна в файл Microsoft Excel. Важно, перед сохранением файл необходимо изменить расширение файла на .xls или .xlsx  
-**MS Word** - экспорт печатной формы в Microsoft Word  
-**PDF** - экспорт печатной формы в PDF файл. Для экспорта будет использован формат установленный по-умолчанию для данного документа  
-**Запустить Приложение** - запуск приложения, предопределённого при настройке Системы. Для Roin World не активирован  
-Блокировать экран - кнопка для блокировки экрана на случай если пользователь планирует отойти от компьютера
+**Preview** - previews the print layout. The default layout configured for the document is used.  
+**Print** - prints the document layout. As with Preview, the default layout configured for the document is used.  
+**SAP Business One Mailer** - sends the document via SAP internal mail.  
+**SMS** - the document-by-SMS module is not activated for Roin World.  
+Fax - the document-by-fax module is not activated for Roin World.  
+**MS Excel** - exports data from the open window to Microsoft Excel. Important: before saving, change the file extension to .xls or .xlsx.  
+**MS Word** - exports the print layout to Microsoft Word.  
+**PDF** - exports the print layout to a PDF file. The default layout configured for the document is used.  
+**Launch Application** - launches an application predefined in the System configuration. Not activated for Roin World.  
+Lock Screen - locks the screen if the user needs to leave the computer.
 
-### Данные
+### Data
  <img src="../.assets/f6f2cfa4-5621-4299-8132-c06080394548.png" alt="" width="100%" />
 
-**Поиск** - переключение открытого документа в режим поиска  
-**Добавить** - переключение открытого документа в режим добавления новой записи  
-Для понимания как работают следующие кнопки необходимо представить, что все документы расположены слева направо от номера 1 до номера N. Следующие иконки позволяют переходить между документами **внутри одного типа документов**  
-**Перейти к первой записи** - переход к документу с минимальным номером  
-**Предыдущая запись** - переход к документу с номером документа меньше, чем у открытого  
-**Следующая запись** - переход к документу с номером документа больше, чем у открытого  
-**Перейти к последней записи** - переход к документу с максимальным номером (последний созданный документ)  
-**Фильтрация таблицы** - установить фильтр для документов табличного вида и отчётов  
-**Сортировка таблицы** - отсортировать данные в табличного вида документах и отчётах
+**Find** - switches the open document to Find Mode.  
+**Add** - switches the open document to Add Mode.  
+To understand the following buttons, imagine that all documents are arranged from left to right, from number 1 to number N. The following icons allow navigation between documents **within the same document type**.  
+**First Data Record** - opens the document with the lowest number.  
+**Previous Record** - opens the document with a lower document number than the current one.  
+**Next Record** - opens the document with a higher document number than the current one.  
+**Last Data Record** - opens the document with the highest number (the most recently created document).  
+**Filter Table** - applies a filter to table-type documents and reports.  
+**Sort Table** - sorts data in table-type documents and reports.
 
-### Перейти к
+### Go To
  <img src="../.assets/5e779e90-1046-4fa1-96c8-4f5c873c90f6.png" alt="" width="100%" />
 
-**Предыдущий документ** - переход к базовому документу, кнопка активна при наличии базового документа. Например, для документа Отгрузка базовым документом является Заказ на продажу  
-**Последующий документ** - переход к целевому документу при его наличии.  
-Например, для документа Отгрузка целевым документом является Продажа (Инвойс)  
-**Валовая прибыль** - переход к окну просмотра и настройки расчёта валовой прибыли по документу  
-**Методы платежа** - Переход к окну ввода реквизитов платежа. Кнопка активна для документов, подразумевающих проводку платежа (Закупка\\Продажа, инвойсы и Платежи)  
-**Расчёт объёма и веса** - переход к окну расчёта общего объёма и веса товаров, содержащихся в документе. Условием наличия данных в этой форме является заполнение данных о весе в карточке товара.  
-**Журнал проводок** - переход к окну просмотра бухгалтерских операций  
-**Предварительный просмотр бух.операции** - переход к просмотру бухгалтерской операции, которая будет создана (если документ ещё не сохранён) в режиме предпросмотра. Эта опция является очень полезным инструментом. При генерации предпросмотра, система проверяет не имеет ли документ ошибок. При этом, проводка в системе не создаются, что даёт шанс внести изменения до проводки.
+**Base Document** - opens the base document. The button is active when a base document exists. For example, the base document for a Delivery is a Sales Order.  
+**Target Document** - opens the target document, if one exists.  
+For example, the target document for a Delivery can be an A/R Invoice.  
+**Gross Profit** - opens the window for viewing and configuring the gross-profit calculation for the document.  
+**Payment Means** - opens the window for entering payment details. The button is active for documents that can create a payment posting (A/P and A/R invoices and Payments).  
+**Volume and Weight Calculation** - opens the calculation of the total volume and weight of the items in the document. Weight data must be maintained in the Item Master Data.  
+**Journal Entry** - opens the related accounting postings.  
+**Journal Entry Preview** - previews the journal entry that will be created if the document has not yet been saved. This is a very useful tool. When the preview is generated, the System checks the document for errors. No posting is created, giving the user an opportunity to correct the document before posting.
 
-### Инструменты
+### Tools
  <img src="../.assets/445e1a68-324c-4f34-ad8b-222cd25aed9a.png" alt="" width="100%" />
 
-**Редактор печатных форм** - технический инструмент настройки печати и выбора форматов, для пользователей системы настройка недоступна  
-**Параметры настройки формы** - переход к настройке отображения полей. В документах табличного вида позволяет скрыть\\отобразить или переместить колонки  
-**Менеджер запросов** - переход к хранилищу пользовательских запросов (отчётов). Это основной инструмент пользователя для запуска отчётов.  
-**Live collaboration** и **Отправить в чат** - кнопки внутреннего чата Colaboration. Для Roin World не активен
+**Print Layout Designer** - a technical tool used to configure printing and select layouts. Configuration is not available to regular users.  
+**Form Settings** - opens field-display settings. In table-type documents, it allows columns to be hidden, displayed, or moved.  
+**Query Manager** - opens the repository of user-defined queries (reports). This is the primary user tool for running custom reports.  
+**Live Collaboration** and **Send to Chat** - internal collaboration chat buttons. Not activated for Roin World.
 
-### Окно
+### Window
  <img src="../.assets/665d84a9-fce5-412f-9552-97fc4086acb9.png" alt="" width="100%" />
 
-**Обзор сообщений Workflow** - для Roin World не активен  
-**Обзор сообщений \\ предупреждений** - переход в почтовый ящик пользователя (SAP Business One Mailer)  
-**Календарь** - переход к календарю пользователя  
-**Выбор филиала по умолчанию** - для Roin World не активен  
-**Мои личные настройки** - переход к настройкам пользователя. В этом окне могут быть изменены шрифт, язык интерфейса, и активация сервисов SAP
+**Workflow Messages Overview** - not activated for Roin World.  
+**Messages/Alerts Overview** - opens the user's mailbox (SAP Business One Mailer).  
+**Calendar** - opens the user's calendar.  
+**Select Default Branch** - not activated for Roin World.  
+**My Personal Settings** - opens the user settings. Font, interface language, and activation of SAP services can be changed here.
 
 ### Extreme Apps
  <img src="../.assets/0c6d252c-30e8-48cc-8064-3c7c6c864971.png" alt="" width="100%" />
 
-**Проверка доступного количества** - переход к инструменту АТР, для Roin World не активен  
-**Управление графиком поставок** - переход к инструменту АТР, для Roin World не активен  
-**Прогноз движения денежных средств** - переход к SAP HANA инструменту просмотра прогноза кассовых разрывов и ликвидности  
-**Сквозная аналитика** - переход к SAP HANA инструменту аналитики. Инструмент позволяет создавать дашборды рабочего пространства Fiori  
-**Web Client** - запуск web клиента SAP Business One
+**Available-to-Promise Check** - opens the ATP tool. Not activated for Roin World.  
+**Delivery Schedule Management** - opens the ATP tool. Not activated for Roin World.  
+**Cash Flow Forecast** - opens the SAP HANA cash-flow and liquidity forecast tool.  
+**Pervasive Analytics** - opens the SAP HANA analytics tool. It can be used to create dashboards for the Fiori Desktop.  
+**Web Client** - launches the SAP Business One Web Client.
 
-### Справка
+### Help
  <img src="../.assets/3046ec53-7be7-4b01-ae78-bb24593a7049.png" alt="" width="100%" />
 
-**Справка** - переход к справочной системе SAP Business One
+**Help** - opens SAP Business One Help.
 
 ## (8) Drag&Relate
-Функциональный раздел Главного Меню, позволяющий получать отчёты на лету. Для использования данного функционала потребуется раскрыть в Drag&Relate интересующий пункт и также открыть источник данных для формирования отчёта. В примере ниже используется карточка БП. В карточке БП необходимо зажать кнопкой мыши поле до появления чёрной рамки вокруг поля и затем - перетащить рамку на пункт Drag&Relate и сбросить. В примере Название БП сброшено на отчёт по продажам на уровне строк заказа
+A functional section of the Main Menu used to generate reports on the fly. To use it, expand the required Drag&Relate section and open the data source to be used for the report. The example below uses Business Partner Master Data. In the Business Partner Master Data window, click and hold the required field until a black frame appears around it, then drag the frame to the required Drag&Relate item and drop it. In the example, the Business Partner Name is dropped onto the sales report at Sales Order row level.
 
  <img src="../.assets/f18ef081-69c6-43da-bed2-2474f70e17b8.png" alt="" width="100%" />
 
@@ -125,25 +125,26 @@
 \
 
 \  
-Поскольку в строках заказа содержатся товары, то будет сформирован отчёт по товарам для выбранного БП использованных в Заказе на продажу:  
+Because Sales Order rows contain items, a report will be generated showing the items used in Sales Orders for the selected Business Partner:  
  <img src="../.assets/83821ea2-9902-495f-a52e-731babda3e74.png" alt="" width="100%" />
 
-## (9) Корпоративный поиск
-Google-like поиск по документам и мастер данным, сохранённым в базе данных
+## (9) Corporate Search
+Google-like search across documents and master data stored in the database.
 
-## (10) Строка состояния
-Область интерфейса в которой отображаются сообщения от SAP
+## (10) Status bar
+The interface area where SAP messages are displayed.
 
-## (11) Пользовательская информационная строка
-Область интерфейса, разделённая на 4 поля. В каждое из полей пользователь может перетянуть поле из документа или мастер данных (например с вкладки Логистика). После этого данные из этого поля будут показываться для активного документа, а пользователю не надо будет заходить на отдельную вкладку чтобы узнать что содержится в поле
+## (11) User info bar
+An interface area divided into four fields. The user can drag a field from a document or master-data record (for example, from the Logistics tab) into any of these fields. The selected value will then be displayed for the active document without the user having to open the relevant tab.
 
-## (12) Рабочий cтол Fiori
-Область рабочего стола SAP Business One, предназначенная для вывода текущей информации в виде дашбордов и KPI показателей. Сам рабочий стол Fiori имеет два режима:
+## (12) Fiori Desktop
+The SAP Business One workspace area used to display current information as dashboards and KPI indicators. The Fiori Desktop has two modes:
 
-* Рабочий стол пользователя
-* Преднастроенная шаблон с дашбордами
-В режиме рабочего стола пользователя, для добавления дашборда на рабочий стол необходимо нажать символ '+' и выбрать дашборды для размещения на рабочем столе. Дашборды относящиеся к Roin World имеют названия начинающиеся с RW.  
-В режиме шаблонов, необходимо нажать на символ Папки и выбрать один из преднастроенных шаблонов
+* User desktop
+* Preconfigured dashboard template
+
+In User Desktop mode, click the '+' symbol and select the dashboards to be placed on the desktop. Dashboards related to Roin World have names starting with RW.  
+In template mode, click the Folder icon and select one of the preconfigured templates.
 
  <img src="../.assets/e5a24dea-e6fd-4a76-8083-0e494f075222.png" alt="" width="100%" />
 
@@ -157,7 +158,7 @@ Google-like поиск по документам и мастер данным, �
 
 \
 
-Система обновит содержание рабочего стола и отразит преднастроенные в шаблоне дашборды
+The System will refresh the desktop contents and display the dashboards configured in the selected template.
 
  <img src="../.assets/61789af5-0c94-453a-9ec4-61a7f8d01aa6.png" alt="" width="100%" />
 
@@ -168,71 +169,74 @@ Google-like поиск по документам и мастер данным, �
 \
 
 \  
-Для возврата к рабочему столу пользователя необходимо нажать на символ Назад [<]  
-Для обновления данных в графиках - символ Refresh. Без нажатия на Refresh - данные в дашбордах будут обновлены раз в 3 минуты.
+To return to the User Desktop, click the Back symbol [<].  
+To refresh the data in the charts, click Refresh. Without pressing Refresh, dashboard data is updated every 3 minutes.
 
-# Form Mode \\ Состояние формы.
-Любой объект SAP Business One имеет несколько режимов. Система подсказывает пользователю текущее состояние посредством подсветки полей формы, а также текстом, отображаемом на кнопке формы.
+# Form Mode
+Every SAP Business One object has several modes. The System indicates the current mode by highlighting form fields and by the text displayed on the form button.
 
-Поля жёлтого цвета и текст на кнопке по-умолчанию [Поиск] означают, что форма находится в режиме [Find Mode] \\ [Режим поиска записи] :
+Yellow fields and the default button text [Find] mean that the form is in [Find Mode]:
 
  <img src="../.assets/81483761-e039-4159-87e5-329e361bafe1.png" alt="" width="100%" />
 
-Поля белого цвета и текст на кнопке по-умолчанию [Добавить] означают, что форма находится в режиме [Add Mode] \\ [Режим добавления новой записи] :
+White fields and the default button text [Add] mean that the form is in [Add Mode]:
 
  <img src="../.assets/2a89a2c1-a89b-46bb-aebc-d60c3e08a620.png" alt="" width="100%" />
 
-Поля белого цвета и текст на кнопке по-умолчанию [Добавить] означают, что форма находится в режиме [Update Mode] \\ [Режим обновления записи] :
+White fields and the default button text [Update] mean that the form is in [Update Mode]:
 
- <img src="../.assets/9fbf6cca-a0fc-42e8-a365-dc7a83b9bb95.png" alt="" width="100%" />Оранжевый ярлык на кнопке Формы означает, что именно эта кнопка будет нажата при нажатии кнопки [Enter] на клавиатуре.
+ <img src="../.assets/9fbf6cca-a0fc-42e8-a365-dc7a83b9bb95.png" alt="" width="100%" />The orange marker on the Form button means that this is the button that will be triggered when [Enter] is pressed on the keyboard.
 
-## Переключение между режимами формы
-Для переключения между режимами может быть выполнен двумя способами:
+## Switching between Form Modes
+There are two ways to switch between modes:
 
-* Клавиатура.
-Для активации режима [Find Mode] \\ [Режим поиска записи] необходимо нажать комбинацию клавиш [Ctrl] + [F]  
-Для активации режима [Add Mode] \\ [Режим добавления новой записи] необходимо нажать комбинацию клавиш [Ctrl] + [A] (англ.раскладка)  
-* Мышь
-Для переключения Режима формы необходимо нажать (1) для переключения в [Find Mode] \\ [Режим поиска записи] и (2) для переключения в [Add Mode] \\ [Режим добавления новой записи]
+* Keyboard
+
+To activate [Find Mode], press [Ctrl] + [F].  
+To activate [Add Mode], press [Ctrl] + [A] (English keyboard layout).  
+
+* Mouse
+
+To switch Form Mode, click (1) to switch to [Find Mode] and (2) to switch to [Add Mode].
 
  <img src="../.assets/e27da94b-2ef9-44f0-8eaa-89ee39deb0ee.png" alt="" width="100%" />
 
-Переключение в режим [Update Mode] \\ [Режим обновления записи] происходит автоматически, если пользователь внёс изменение в поля Формы.
+The form automatically switches to [Update Mode] when the user changes a field on the Form.
 
-### [Find Mode] \\ [Режим поиска записи]
-Находясь в режиме поиска записи пользователь имеет возможность уточнить критерии для осуществления поиска. Для ввода критериев доступны любые из полей закрашенных жёлтым цветом. В качестве критериев могут быть использованы значения из Выпадающих списков или свободный ввод, со следующим подходом: (на примере названия товара)
+### [Find Mode]
+In Find Mode, the user can define search criteria. Any yellow field can be used for entering criteria. Values from drop-down lists or free text can be used, following the approach below (using Item Name as an example):
 
-* pi\* - для поиска записей начинающихся с pi (**pi**zza with tomato, **pi**nk pizza)
-* \*za - для поиска запискей заканчиващихся на za (big fat piz**za**, pink piz**za**
-* \*pa \* - для поиска записей содержащих pa в названии ( lovely **pa**sta meals)
-* \*pi%za \* - для поиска записей где один символ неизвестен (big lovely **pi**z**za**)
+* pi\* - finds records beginning with pi (**pi**zza with tomato, **pi**nk pizza)
+* \*za - finds records ending with za (big fat piz**za**, pink piz**za**)
+* \*pa \* - finds records containing pa in the name (lovely **pa**sta meals)
+* \*pi%za \* - finds records where one character is unknown (big lovely **pi**z**za**)
 
-При заполнении нескольких полей они работают как совокупность критериев.
+If several fields are populated, they are used as a combined set of search criteria.
 
-Например:
+For example:
 
-Результат - все карточки товаров где в составе названия используется сочетание **za**:
+Result - all Item Master Data records where the name contains **za**:
 
  <img src="../.assets/65cc8f87-a067-4baa-bdfd-98c65b7261b6.png" alt="" width="100%" />
 
-Результат - все карточки товаров где в составе названия используется сочетание **za**, группа товаров которых Finished Goods\\Готовая продукция и Группа Единиц измерения - Each\\Штучные:
+Result - all Item Master Data records where the name contains **za**, the Item Group is Finished Goods, and the UoM Group is Each:
 
  <img src="../.assets/85b71463-e6c5-4ffc-8309-e9313714ffdc.png" alt="" width="100%" />
 
-Для запуска поиска необходимо нажать кнопку формы [Поиск]. Нажатие этой кнопки может быть выполнено мышью или нажатием клавиши клавиатуры [Enter]
+To run the search, click the [Find] form button. It can be clicked with the mouse or triggered by pressing [Enter].
 
-**Обратите внимание!** Система фиксирует действия пользователя и воспринимает взаимодествие с полем как критерий. Например, если пользователь поставит курсор в поле Название, внесёт туда что-то и потом удалит (и нажмёт поиск) то система будет пытаться найти запись с пустым полем Название.
+**Please note!** The System records user interaction with fields and may interpret it as a search criterion. For example, if the user places the cursor in the Name field, enters a value and then deletes it before running the search, the System may attempt to find a record with an empty Name field.
 
-### [Add Mode] \\ [Режим добавления новой записи]
-Добавление новой записи выполняется всегда в определённой последовательности. Слева-направо, и сверху-вниз. Первым заполняется Заголовок, затем заполняются Вкладки. Вкладки заполняются от левой к правой. Нумерация на скриншоте условная последовательность.
+### [Add Mode]
+A new record is always entered in a defined sequence: left to right and top to bottom. Complete the Header first, then the Tabs. Tabs should be completed from left to right. The numbering in the screenshot represents the recommended sequence.
 
- <img src="../.assets/55889e66-84be-41ac-812d-3d9789efb571.png" alt="" width="100%" />Подобный подход к заполнению документа обусловлен тем, что на формах (как правило в Документах) расположены зависимые поля.
-Например зависимость полей Склад - Счёт - Департамент.  
-Так как при изменении Склада система выполнит изменение счёта, а Департамент в свою очередь зависит от счёта. То при преждевременном заполнении поля Департамент с последующим изменением Склада, Система очистит поле Департамент.
+ <img src="../.assets/55889e66-84be-41ac-812d-3d9789efb571.png" alt="" width="100%" />This approach is important because forms (especially Documents) often contain dependent fields.  
+For example, Warehouse - Account - Department.  
+If the Warehouse is changed, the System may change the Account, and the Department may in turn depend on the Account. Therefore, if Department is filled in before Warehouse is changed, the System may clear the Department field.
 
-### [Update Mode] \\ [Режим обновления записи]
-Режим обновления записи активируется автоматически если в режиме [View Mode] \\ [Режим просмотра записи], пользователь выполнит изменение какого либо из полей. Для сохранения внесённых данных необходимо нажать кнопку формы [Update] или клавишу [Enter]  
-Для возврата в режим просмотра при этом (если изменение записи не требуется) необходимо нажать кнопку Обновить, расположенную на панели инструментов (см.ниже в разделе Панель инструментов).
+### [Update Mode]
+Update Mode is activated automatically if the user changes any field while in [View Mode]. To save the changes, click the [Update] form button or press [Enter].  
+To return to View Mode without saving the change, use the relevant toolbar action described above in the Tool Panel section.
 
-### [View Mode] \\ [Режим просмотра записи]
-Стандартный режим для документов в статусе Закрыт и записей Справочников. Значение кнопки формы - [OK]. Если будет нажата клавиша [Enter] то Форма будет закрыта.
+### [View Mode]
+The standard mode for documents with Closed status and for Master Data records. The form button shows [OK]. If [Enter] is pressed, the Form will be closed.
