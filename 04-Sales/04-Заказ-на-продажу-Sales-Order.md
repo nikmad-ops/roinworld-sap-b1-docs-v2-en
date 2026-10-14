@@ -1,111 +1,109 @@
-Заказ на продажу является плановым документом. Его добавление в Систему не создаёт складских и бухгалтерских проводок, это даёт возможность вносить изменения до момента, пока из Заказа не будет создан документ Отгрузка. Создание документа Заказ закрывает строки Предложения и делает их нередактируемыми.  
-Заказ на продажу является базовым документом в SAP Business One. В процессе реализации может не существовать Коммерческого предложения, но Заказ является обязательным. Документ этого типа отражает переход от планирования Меню к процессу реализации, переход к запуску производства.
+A Sales Order is a planning document. Adding it to the System does not create inventory or accounting postings, so it can be changed until a Delivery is created from the Order. Creating a Sales Order closes the related Sales Quotation lines and makes those lines non-editable.  
+The Sales Order is a base document in SAP Business One. A sales process may exist without a Sales Quotation, but the Sales Order is mandatory. This document marks the transition from Menu planning to actual fulfillment and the start of production.
 
-## Серии нумерации
-Поскольку Заказ является базовым документом процесса реализации, то при его создании формируется и проверяется набор реквизитов, которые в последствии будут использованы при выставлении инвойсов. К таким реквизитам относится Серия нумерации.  
-Одномоментно, для каждого типа документа существует несколько параллельных системы нумерации. Каждая серия нумерации диктует Системе подход к формированию номера документа.  
-Например, для Заказа на продажу установлены следующие серии, где х это номер заказ по порядку его создания:
+## Numbering Series
+Because the Sales Order is a base document in the sales process, the System creates and validates a set of details when the Order is created. These details are later used for invoicing. One of them is the Numbering Series.  
+Several parallel numbering series exist for each document type. Each series defines how the document number is generated.  
+For example, the following series are configured for Sales Orders, where x is the sequential number of the order:
 
-| **Серия нумерации** | **Начальный №** | **Последний №** | **Префикс** | **Пример номера** | **Сфера использования** |
-|-----------------|-------------|-------------|---------|---------------|---------------------|
-| OF26            | 100001      | 199999      | SO2026/ | SO2026/100001 | Meals\\Menu         |
-| ST26            | 200001      | 299999      | SO2026/ST/ | SO2026/ST/200001 | Stella              |
-| FT26            | 300001      | 399999      | SO2026/FT/ | SO2026/FT/300001 | Foodtruck           |
-| BK26            | 400001      | 499999      | SO2026/BK/ | SO2026/BK/400001 | Bakery              |
-| LO26            | 900001      | 999999      | SO2026/IC/ | SO2026/IC/900001 | Intercompany        |
+| **Numbering Series** | **First No.** | **Last No.** | **Prefix** | **Example Number** | **Usage** |
+|----------------------|---------------|--------------|------------|--------------------|-----------|
+| OF26 | 100001 | 199999 | SO2026/ | SO2026/100001 | Meals\Menu |
+| ST26 | 200001 | 299999 | SO2026/ST/ | SO2026/ST/200001 | Stella |
+| FT26 | 300001 | 399999 | SO2026/FT/ | SO2026/FT/300001 | Foodtruck |
+| BK26 | 400001 | 499999 | SO2026/BK/ | SO2026/BK/400001 | Bakery |
+| LO26 | 900001 | 999999 | SO2026/IC/ | SO2026/IC/900001 | Intercompany |
 
-В таблице выше, в качестве примера приведены полные форматы номеров. При этом, в пользовательском интерфейсе, системно, пользователю показывается только числовая составляющая номера (200103 - заказ Stella, 499423 - заказ Bakery)
+The table above shows the full document-number formats. In the user interface, however, the System displays only the numeric part of the number, for example 200103 for a Stella order or 499423 for a Bakery order.
 
-Поскольку каждая серия нумерации ассоциирована с определённым направлением реализации, а направление определяется складом, указанным в Заказе, то система контролирует соответствует ли выбранная пользователем серия нумерации указанному в строках складу. В случае несоответствия, система заблокирует сохранение Заказа.
+Each numbering series is associated with a specific sales channel, and the sales channel is determined by the warehouse specified in the Order. Therefore, the System validates that the numbering series selected by the user corresponds to the warehouse in the document rows. If they do not match, the System blocks saving the Sales Order.
 
-**Заказ на продажу**
+## Sales Order
 
-Заказ по-разному используется в процессах:
+The Sales Order is used differently in different processes:
 
-* Для процесса реализации Meals\\Menu, Заказ является документом следующим за Коммерческим Предложением.
-* Для процессов реализации через кассу, Заказ является документом - входной точкой, то есть первым документом в цепочке.
+* In the Meals\Menu sales process, the Sales Order follows a Sales Quotation.
+* In POS sales processes, the Sales Order is the entry-point document, meaning the first document in the chain.
 
-Тип процесса определяется по Серии нумерации. При сохранении Заказа, Система проверяет наличие предшествующего документа Предложение и блокирует созранение если Заказ для Meals\\Menu создан не на основании Предложения. Для документов с Серией нумерации Stella\\Foodtruck\\Bakery наличие предшествующего документа не проверяется  
-Процедура создания Заказа на продажу в этих двух процессах отличается. При наличии предшествующего документа Заказ создаётся через копирование данных между Предложением и Заказов. Для регистрации продажи через кассу Заказ создаётся с нуля. Проверка документа перед его сохранением идентична для обоих процессов.
+The process type is determined by the Numbering Series. When a Sales Order is saved, the System checks for a preceding Sales Quotation and blocks saving if a Meals\Menu Sales Order was not created from a Quotation. For Stella\Foodtruck\Bakery numbering series, the preceding document is not checked.  
+The Sales Order creation procedure therefore differs between the two processes. If a preceding document exists, the Sales Order is created by copying data from the Sales Quotation. For POS sales, the Sales Order is created from scratch. The validation performed before saving is otherwise the same.
 
-### Meals\\Menu
-Для создания Заказа на основании Предложения необходимо:
+### Meals\Menu
+To create a Sales Order from a Sales Quotation:
 
-1. Открыть документ Заказ на продажу из Главного меню -> Продажи -> Заказ на продажу
+1. Open Sales Order from Main Menu → Sales - A/R → Sales Order.
 
-2. В открывшейся форме заполнить Заголовок
+2. Complete the Header.
 
-(1) Указать реквизиты Клиента  
-(2) Проверить и при необходимости изменить Серию нумерации  
-(3) Указать плановую дату отгрузки  
+(1) Specify the Customer details.  
+(2) Verify and, if necessary, change the Numbering Series.  
+(3) Specify the planned delivery date.  
 
  <img src="../.assets/20d57cb6-a580-4452-9ee8-24a3a0a653cc.png" alt="" width="100%" />
 
-3. Нажать кнопку [Скопировать Из] и в открывшемся меню выбрать Предложение
+3. Click [Copy From] and select Sales Quotation from the menu.
 
  <img src="../.assets/3d6c516d-5108-4228-93e8-43c495f155f8.png" alt="" width="100%" />
 
-4. В открывшемся окне выбрать иточник для переноса данных - Коммерческое Предложение и нажать кнопку [Выбрать]
+4. In the window that opens, select the source Sales Quotation and click [Choose].
 
  <img src="../.assets/5bd5c21f-aeff-4550-bace-9c51da4fb709.png" alt="" width="100%" />
 
-5. Система откроет окно Ассистента создания документа.
+5. The System opens the Draw Document Wizard.
 
-На первой странице установить следующие пункты, и затем нажать кнопку [Дальше]
+On the first page, select the required options shown below and click [Next].
 
  <img src="../.assets/37a6a02b-2870-4399-93e7-48bb69a5356c.png" alt="" width="100%" />
 
-6. На второй странице проверить, и при необходимости внести изменения в строках. Выбрать строки для переноса. При необходимости перенести несколько строк - выбор производить с нажатой клавишей [Ctrl]. По окончании выбора нажать кнопку [Завершить]
+6. On the second page, review and, if necessary, modify the rows. Select the rows to be copied. To select multiple rows, hold [Ctrl] while selecting them. When finished, click [Finish].
 
  <img src="../.assets/26e957a6-61ec-40a0-b9a3-ba0241a5e8ec.png" alt="" width="100%" />
 
-7. Система скопирует выбранные строки в Заказ на продажу
+7. The System copies the selected rows into the Sales Order.
 
-8. Подписать документ, выбрав подпись в поле Ответственный
+8. Sign the document by selecting your signature in the Owner field.
 
  <img src="../.assets/2f9799ec-21ef-48fb-8055-1a570b51faf8.png" alt="" width="100%" />
 
-9. Нажать кнопку [Добавить] для сохранения изменений
+9. Click [Add] to save the document.
 
-Это действие
+### Foodtruck \ Bakery \ Stella
+(!) Only the OTC customer (One Time Customer) may be used for POS sales.
 
-### Foodtruck \\ Bakery \\ Stella
-(!) В качестве Клиента для реализации через кассу в обязательном порядке должен использоваться только OTC клиент (One Time Customer)
+1. Open Sales Order from Main Menu → Sales - A/R → Sales Order.
 
-1. Открыть документ Заказ на продажу из Главного меню -> Продажи -> Заказ на продажу
+2. Complete the Header.
 
-2. Заполнить заголовок
-
-(1) Указать клиента - OTC  
-(2) Указать Серию нумерации, соответствующую точке продаж (в примере - Foodtruck)  
-(3) Указать ссылочный номер (смена, дата или z-чек)  
-(4) Указать даты документа. С системе указывается реальная дата реализации  
+(1) Specify Customer - OTC.  
+(2) Select the Numbering Series corresponding to the point of sale (Foodtruck in the example).  
+(3) Enter the reference number (shift, date, or Z-report).  
+(4) Enter the document dates. The actual sales date must be entered in the System.  
 
  <img src="../.assets/4d9d32c6-80f2-4ded-8b0b-9fd7c9d5e9e4.png" alt="" width="100%" />
 
-3. Перейти к заполнению таблицы на вкладке Содержание
+3. Go to the Contents tab.
 
-4. Указать реализованные товары. Для этого скопировать и вставить одно из следующих значений в колонки
+4. Enter the items sold. Copy and paste one of the following values into the relevant columns:
 
-(1) Код товара или (2) EGS код товара или (3) Наименование товара  
-(4) Скопировать и вставить в колонку количество реализованных товаров  
+(1) Item Code, or (2) Item EGS Code, or (3) Item Name  
+(4) Copy and paste the quantity sold into the Quantity column.  
 
  <img src="../.assets/a17b0eef-2472-4135-b1fd-475d08487154.png" alt="" width="100%" />
 
-5. Проверить и скорректировать данные в следующих полях:
+5. Verify and, if necessary, correct the following fields:
 
-Итого по документу - должна совпадать с итоговой суммой в чеке  
-Цена за единицу - по умолчанию, в поле подтягивается цена из связанного с ОТС прайс-листа  
-Код налога - по умолчанию в поле подтягивается налог настроенный для ОТС и товара  
-Склад - должен соответствовать точке продаж  
-Key\\Milestone и Department - кост центры должны соответствовать Складу и Серии нумерации  
-Договор - для продаж через кассу поле должно быть пустым
+Document Total - must match the total amount on the receipt.  
+Unit Price - by default, the price is taken from the price list linked to OTC.  
+Tax Code - by default, the tax code configured for OTC and the item is proposed.  
+Warehouse - must correspond to the point of sale.  
+Key/Milestone and Department - cost centers must correspond to the Warehouse and Numbering Series.  
+Blanket Agreement - must remain empty for POS sales.
 
-6. Подписать документ, указав
+6. Sign the document by specifying:
 
-Менеджер продаж - кассира  
-Ответственный - подпись сотрудника создавшего заказ в SAP
+Sales Employee - cashier  
+Owner - employee who created the Sales Order in SAP
 
  <img src="../.assets/3d6bcdb8-9219-4193-8675-ce559aef9438.png" alt="" width="100%" />
 
-7. Нажать кнопку [Добавить] для сохранения изменений
+7. Click [Add] to save the document.
