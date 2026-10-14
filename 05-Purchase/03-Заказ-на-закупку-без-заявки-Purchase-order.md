@@ -1,2 +1,2 @@
-Заказ на закупку - базовый документ планового типа. Информация, содержащаяся в Заказе используется всеми пользователями SAP в виде отчётов о планируемой поставке.  
-Заказ может быть создан без базовой Заявки на закупку, но стоит учесть, что изменение Поставщика в Заказе невозможно.
+A Purchase Order is a base planning document. Information contained in the Purchase Order is used by SAP users in reports about planned deliveries.  
+A Purchase Order can be created without a base Purchase Request, but please note that the Vendor cannot be changed after the Purchase Order is created.
