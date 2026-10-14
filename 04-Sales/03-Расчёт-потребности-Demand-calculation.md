@@ -1,58 +1,60 @@
-## Запуск расчёта Потребности \\ Demand
+## Running Demand Calculation
 
-1. Открыть ранее сохранённое Предложение (расчёт Потербности возможен только для документа добавленного в базу данных) [Коммерческое Предложение | Sales Quotation](02-Коммерческое-Предложение-Sales-Quotation.md)
+1. Open a previously saved Sales Quotation. Demand calculation is available only for a document that has already been added to the database: [Sales Quotation](02-Коммерческое-Предложение-Sales-Quotation.md)
 
-2. Нажать комбинацию клавиш запуска Динамического отчёта [F2] -> [F12]
+2. Press the key assigned to the Dynamic Report, between [F2] and [F12].
 
-[Назначение Динамического отчёта](../01-General/04-Назначение-Динамического-отчёта.md)  
-Данная настройка является пользовательской и зависит от того как каждый из пользователей организовал свою работу в системе.
+[Assigning a Dynamic Report](../01-General/04-Назначение-Динамического-отчёта.md)  
+This is a user-specific setting and depends on how each user has configured their work in the System.
 
-3. Система выполнит расчёт Потребности и отобразит результат в табличном виде. Для работы с таблицей доступны инструменты фильтрации и сортировки, расположенные на Панели инструментов
+3. The System calculates Demand and displays the result in a table. Filtering and sorting tools available on the Tool Panel can be used with the table.
 
  <img src="../.assets/63fe168c-1c21-487c-8b65-6c37b1e36534.png" alt="" width="100%" />
 
-4. Таблица расчёта Потребности формируется следующим образом:
+4. The Demand table is calculated as follows:
 
-(описание действительно для версии 1.0 процедуры расчёта Потребности, актуальной на момент составления инструкции)  
-В отчёте отображаются **только позиции с потребностью**.  
-Например: Если для производства яичницы необходимо 10 яиц, которые имеются на складе то яйцо не будет показано в отчёте как потребность. Но, если в момент расчёта в системе уже будет находиться заказ на другое блюдо требующем яйцо, то яйцо будет отражено в Потребности.  
-Правило сверки:  
-Количество на складе - Количество в продажах + Количество в закупках - Количество потребности  
-Расчёт выполняется от верхней спецификации к низшей и затем до ингредиентов.
+(The description below applies to version 1.0 of the Demand calculation procedure, current at the time this instruction was written.)  
+The report displays **only items with a demand requirement**.  
+For example: if 10 eggs are required to produce scrambled eggs and all 10 eggs are available in stock, eggs will not appear in the report as demand. However, if another order already exists in the System for another dish that also requires eggs, eggs may appear in Demand.  
 
- <img src="../.assets/7ba7d67f-a864-45ad-b488-628ffe82ae48.png" alt="" width="100%" />(1) Тип Потребности. Закупка - товары необходимо закупить (не являются спецификациями) для этих товаров необходимо сформировать Зявку на закупку. Производство - позиции со Спецификациями, для этих товаров необходимо сформировать Производственный заказ
-(2) Очерёдность создания обработки строк. Техническая особенность SAP - пустое поле означает 0 (это значение не отображается)  
-(3) Глубина - информационная колонка, отображает степень вложенности спецификаций  
-(4) Код и наименование товара  
-(5) Код склада. Наличие товаров, наличие заказов определяется только в рамках указанного склада  
-(6) Требуемое количество. Количество потребности собранное отчётом со всех уровней спецификаций.  
-(7) Количество для заказа. Количество которое сформировано из потребности с учётом кратности заказа. Источник кратности заказа - Спецификация для производственных позиций и карточка товара для закупаемых.  
-Например, десерт можно произвести только в количестве 16 кусков. Следовательно при продаже 35 штук, система скалькулирует требуемое количество как 48  
-(8) Кратность заказа - информационная колонка отображающая коэффициент кратности использованный при расчёте  
-(9) На складе - количество товара на складе, указанном в колонке (5)  
-(10) Заказано (продажа). Количество товара для которого в системе созданы Заказы на продажу, Производственные заказы, Запросы на перемещение (исходящие). Для склада,указанного в колонке (5)  
-(11) Заказано (закупка). Количество товара для которого в системе созданы Заказы на закупку, Производственные заказы, Запросы на перемещение (входящие). Для склада,указанного в колонке (5)  
-(12) Используется в товарах. Информационная колонка отображающая, в каких спецификациях **данного расчёта** используется товар из строки  
+Reconciliation rule:  
+Quantity in Stock - Quantity in Sales + Quantity in Purchasing - Demand Quantity  
 
-## Экспорт расчёта Потребности \\ Demand
-Для упрощения переноса данных в Заявку на закупку и Производственные заказы необходимо экспортировать расчёт Потребности в Excel. Для этого
+The calculation is performed from the top-level BOM down through lower-level BOMs to the ingredients.
 
-1. Нажать на кнопку Excel расположенную на Панели инструментов
+ <img src="../.assets/7ba7d67f-a864-45ad-b488-628ffe82ae48.png" alt="" width="100%" />(1) Demand Type. Purchase - items must be purchased (they are not BOMs); a Purchase Request must be created for these items. Production - items with BOMs; a Production Order must be created for these items.  
+(2) Processing sequence for the rows. SAP technical behavior: an empty field means 0 (the value 0 is not displayed).  
+(3) Depth - informational column showing the BOM nesting level.  
+(4) Item Code and Item Name.  
+(5) Warehouse Code. Stock availability and open orders are considered only for the specified warehouse.  
+(6) Required Quantity. Total demand quantity collected by the report from all BOM levels.  
+(7) Order Quantity. Quantity calculated from demand taking the Order Multiple into account. The source of the multiple is the BOM for manufactured items and Item Master Data for purchased items.  
+For example, a dessert can only be produced in batches of 16 pieces. If 35 pieces are required, the System will calculate the required order quantity as 48.  
+(8) Order Multiple - informational column showing the multiple used in the calculation.  
+(9) In Stock - item quantity in the warehouse specified in column (5).  
+(10) Ordered (Sales). Quantity for which Sales Orders, Production Orders, and outgoing Inventory Transfer Requests already exist for the warehouse specified in column (5).  
+(11) Ordered (Purchase). Quantity for which Purchase Orders, Production Orders, and incoming Inventory Transfer Requests already exist for the warehouse specified in column (5).  
+(12) Used in Items. Informational column showing the BOMs **within this calculation** in which the item from the row is used.  
+
+## Exporting Demand Calculation
+To simplify transfer of data into Purchase Requests and Production Orders, export the Demand calculation to Excel.
+
+1. Click the Excel button on the Tool Panel.
 
 <img src="../.assets/c59671ac-ef6d-4c59-a039-5ab9c7c64f6c.png" alt="" width="100%" />
 
-2. В открывшемся окне укзаать путь для сохранения файла и выбрать формат \*.xlsx и нажать кнопку [Save]
+2. In the window that opens, specify the file path, select format *.xlsx, and click [Save].
 
  <img src="../.assets/a64af1d4-4fbe-4cbb-9287-065afe78d21b.png" alt="" width="100%" />
 
-3. Система откроет окно выбора подхода к формату числовых полей
+3. The System opens a dialog asking how numeric fields should be formatted.
 
-Необходимо выбрать ответ Нет. Данный выбор обеспечит совсестимость числового формата полей в Excel
+Select No. This ensures compatibility of numeric field formats in Excel.
 
  <img src="../.assets/c9617c01-8c63-45e6-98b6-a1e091c2b4ac.png" alt="" width="100%" />
 
-4. Файл расчёта Потребности сохранён и может быть использован для создания документов снабжения (Завки на закупку)
+4. The Demand calculation file is saved and can be used to create supply documents such as Purchase Requests.
 
-В разделе Проводка производства описан альтернативный способ сбора потребности. Альтернативный вариант выполняется на стадии сформированного Заказа на продажу.
+The Production Posting section describes an alternative way to collect demand. The alternative is used after a Sales Order has already been created.
 
-[Производственный заказ | Production Order](../06-Production/01-Производственный-заказ-Production-Order.md)
+[Production Order](../06-Production/01-Производственный-заказ-Production-Order.md)
