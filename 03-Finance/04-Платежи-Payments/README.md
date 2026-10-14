@@ -1,1 +1,1 @@
-# Платежи | Payments
+# Payments
