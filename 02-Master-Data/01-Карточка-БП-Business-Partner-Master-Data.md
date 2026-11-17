@@ -42,7 +42,7 @@ To check whether the Business Partner already exists in the System:
 
 2. In Add Mode (white fields), complete the following MINIMUM required set of fields.
 
-<img width="435" height="198" alt="image" src="https://github.com/user-attachments/assets/2f5f2d31-3c6a-45ae-8b7f-2506ddc171ac" />
+<img width="435" height="198" alt="image" src="https://github.com/user-attachments/assets/2f5f2d31-3c6a-45ae-8b7f-2506ddc8ad08" />
 
 (1) Code — the Business Partner Tax ID prefixed with the two-letter ISO country code. For Egyptian residents, use EG.  
 (2) BP Type — Vendor or Customer.  
